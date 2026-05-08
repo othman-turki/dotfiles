@@ -38,7 +38,7 @@ symbol = " "
 symbol = " "
 
 [directory]
-style = "bold mauve"
+style = "bold lavender"
 truncation_length = 2
 truncation_symbol = "…/"
 read_only = " 󰌾"
