@@ -1,9 +1,34 @@
+# Font
 font-family = JetBrainsMono Nerd Font Mono
 font-size = 12
+adjust-cell-height = 10%
+
+# Colors
 theme = Catppuccin Mocha
-background-opacity = 0.98
-window-padding-x = 10
-window-padding-y = 10
+background-opacity = 0.92
+
+# Window
+gtk-titlebar = false
+window-padding-x = 12
+window-padding-y = 12
+window-padding-balance = true
+
+# Cursor
+# no-cursor stops shell integration from overriding the cursor settings
+shell-integration-features = no-cursor
 cursor-style = bar
 cursor-style-blink = false
-confirm-close-surface = false
+
+# Behavior
+mouse-hide-while-typing = true
+confirm-close-surface = true
+
+# Move between splits
+# Alt+Arrow avoids GNOME's Ctrl+Alt+Arrow workspace shortcuts
+keybind = alt+left=goto_split:left
+keybind = alt+right=goto_split:right
+keybind = alt+up=goto_split:up
+keybind = alt+down=goto_split:down
+
+# Close the current split, or the tab if it has only one terminal
+keybind = ctrl+shift+w=close_surface
