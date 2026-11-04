@@ -10,3 +10,8 @@ status is-interactive; or return
 if type --query zoxide
     zoxide init fish | source
 end
+
+# Prompt: configured in ~/.config/starship.toml.
+if type --query starship
+    starship init fish | source
+end
