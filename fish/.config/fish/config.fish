@@ -11,6 +11,11 @@ if type --query zoxide
     zoxide init fish | source
 end
 
+# Fuzzy finder: Ctrl+R history, Ctrl+T files, Alt+C directories.
+if type --query fzf
+    fzf --fish | source
+end
+
 # Prompt: configured in ~/.config/starship.toml.
 if type --query starship
     starship init fish | source
