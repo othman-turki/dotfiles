@@ -32,3 +32,6 @@ keybind = alt+down=goto_split:down
 
 # Close the current split, or the tab if it has only one terminal
 keybind = ctrl+shift+w=close_surface
+
+window-width = 120
+window-height = 36
