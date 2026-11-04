@@ -5,5 +5,9 @@ function fish_greeting --description 'Display system information'
     # Keep the VS Code terminal clean.
     test "$TERM_PROGRAM" = vscode; and return
 
+    # Skip small terminals, such as Ghostty splits.
+    test "$COLUMNS" -lt 100; and return
+    test "$LINES" -lt 30; and return
+
     fastfetch
 end
