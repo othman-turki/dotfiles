@@ -1,26 +1,12 @@
 # ~/.config/fish/config.fish
-# Fish shell configuration for interactive sessions.
+# Entry point for the fish configuration.
+#
+# Settings live in conf.d/ and functions live in functions/.
+# Add anything here only if it must run after conf.d/.
 
-if status is-interactive
-    # Disable default greeting (fastfetch will replace it later)
-    set -g fish_greeting ""
+status is-interactive; or return
 
-    # Prompt — starship with Catppuccin Mocha, config at ~/.config/starship.toml
-    starship init fish | source
-
-    # Navigation — zoxide (use `z <name>` or `zi` for interactive)
+# Directory jumping: z <name>, or zi for interactive selection.
+if type --query zoxide
     zoxide init fish | source
-
-    # atuin — owns Ctrl+R for history search, up arrow disabled
-    atuin init fish --disable-up-arrow | source
-
-    # Fuzzy finder — fzf (Ctrl+T files, Alt+C cd — atuin owns Ctrl+R)
-    fzf --fish | source
-    bind ctrl-r _atuin_search
-    bind -M insert ctrl-r _atuin_search
-
-    # fzf uses fd for speed and .gitignore awareness
-    set -gx FZF_DEFAULT_COMMAND "fd --type f --hidden --follow --exclude .git"
-    set -gx FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
-    set -gx FZF_ALT_C_COMMAND  "fd --type d --hidden --follow --exclude .git"
 end
